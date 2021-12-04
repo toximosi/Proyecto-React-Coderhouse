@@ -1,0 +1,75 @@
+//import
+@import '../../../scss/principal.scss';
+
+
+.cardproduct{
+//Valor inicial
+width: 470px;
+position: relative;
+
+
+.franja-negra{
+    width: 100%;
+    height: 320px;
+    background-color: $MCnegro;
+    position: absolute; 
+    top: 285px;
+}
+
+    .imagen-producto{
+        position: relative;
+        padding: 30px;
+        .imgen-producto-foto{
+           
+            img{
+                width: 100%;
+                height: auto;
+                
+            }
+         }
+        .bandera{
+            position: absolute;
+            margin: auto;
+            display: inline-block;
+            top:-8px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 32px;
+            
+            img{
+                width: 100%;
+                height: auto;
+            }
+        }
+        
+    }
+    .precio{
+        font-family: 'Creepster';
+        
+        .precio-actual{
+            color:$MCblanco;
+            font-size: 40px;
+        }
+        .precio-oferta{
+            color:$MCrojoO;
+            font-size: 29px;
+        }
+    }
+    .boton-voltear { 
+        width: 138px;
+    height: 40px;
+    font-size: 14px;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    align-content: center;
+    text-align: right;
+    line-height: 1.2;
+        img {
+            margin-left: 10px;          
+        }
+    }
+
+
+}
+

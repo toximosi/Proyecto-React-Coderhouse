@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="57" height="60" viewBox="0 0 57 60">
+  <defs>
+    <filter id="bg" x="3" y="3" width="51" height="54" filterUnits="userSpaceOnUse">
+      <feOffset dx="11" dy="14" input="SourceAlpha"/>
+      <feGaussianBlur result="blur"/>
+      <feFlood flood-opacity="0.161"/>
+      <feComposite operator="in" in2="blur"/>
+      <feComposite in="SourceGraphic"/>
+    </filter>
+    <filter id="contorno" x="0" y="0" width="57" height="60" filterUnits="userSpaceOnUse">
+      <feOffset dx="11" dy="14" input="SourceAlpha"/>
+      <feGaussianBlur result="blur-2"/>
+      <feFlood flood-opacity="0.161"/>
+      <feComposite operator="in" in2="blur-2"/>
+      <feComposite in="SourceGraphic"/>
+    </filter>
+  </defs>
+  <g id="Grupo_1893" data-name="Grupo 1893" transform="translate(-1438 -1629)">
+    <g transform="matrix(1, 0, 0, 1, 1438, 1629)" filter="url(#bg)">
+      <circle id="bg-2" data-name="bg" cx="20" cy="20" r="20" transform="translate(3 3)" fill="#1d141c" opacity="0.005"/>
+    </g>
+    <g transform="matrix(1, 0, 0, 1, 1438, 1629)" filter="url(#contorno)">
+      <g id="contorno-2" data-name="contorno" transform="translate(3 3)" fill="#1d141c" stroke="#676767" stroke-width="3">
+        <circle cx="20" cy="20" r="20" stroke="none"/>
+        <circle cx="20" cy="20" r="21.5" fill="none"/>
+      </g>
+    </g>
+    <path id="flrcha" d="M21.985,7.1a10.544,10.544,0,1,0,2.741,10.081H21.985A7.9,7.9,0,1,1,14.539,6.636,7.8,7.8,0,0,1,20.1,8.981l-4.243,4.243h9.225V4Z" transform="translate(1446.383 1637.393)" fill="#676767"/>
+  </g>
+</svg>

@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="36" height="57.123" viewBox="0 0 36 57.123">
+  <defs>
+    <linearGradient id="linear-gradient" x1="0.5" x2="0.5" y2="1" gradientUnits="objectBoundingBox">
+      <stop offset="0" stop-color="#ee2efe"/>
+      <stop offset="1" stop-color="#ff0045"/>
+    </linearGradient>
+    <filter id="Polígono_2" x="2" y="20.708" width="32" height="36.415" filterUnits="userSpaceOnUse">
+      <feOffset dy="8" input="SourceAlpha"/>
+      <feGaussianBlur result="blur"/>
+      <feFlood flood-opacity="0.161"/>
+      <feComposite operator="in" in2="blur"/>
+      <feComposite in="SourceGraphic"/>
+    </filter>
+  </defs>
+  <g id="producto_marca" data-name="producto/marca" transform="translate(-802 -291)">
+    <g transform="matrix(1, 0, 0, 1, 802, 291)" filter="url(#Polígono_2)">
+      <path id="Polígono_2-2" data-name="Polígono 2" d="M16,0,32,28.415H0Z" transform="translate(34 49.12) rotate(180)" fill="url(#linear-gradient)"/>
+    </g>
+    <text id="oferta" transform="translate(820 302)" fill="#ff0045" font-size="14" font-family="Helvetica"><tspan x="-17.9" y="0">oferta</tspan></text>
+  </g>
+</svg>

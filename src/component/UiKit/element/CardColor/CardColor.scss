@@ -1,0 +1,24 @@
+//import general
+@import '../../../../scss/principal.scss';
+//Variables
+
+//tamaño de la caja color
+$tamanoColor:200px;
+
+
+.CardColor{
+    margin: 5px;
+    padding: 5px;
+    border: 1px solid #0000;
+    text-align: center;
+
+
+    .color{
+        width: $tamanoColor;
+        height: $tamanoColor;
+    };
+
+
+};
+
+
