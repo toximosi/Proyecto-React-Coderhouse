@@ -1,14 +1,13 @@
 //**Import
 @import "~bootstrap/scss/bootstrap";
-@import './scss/principal';
+@import "./scss/principal";
 //--------------------------------------------------
-body{
-  color:$MCTextOscuro;
+body {
+  color: $MCTextOscuro;
   background-color: $MCbg;
 }
 .App {
   text-align: center;
-
 }
 
 .App-logo {

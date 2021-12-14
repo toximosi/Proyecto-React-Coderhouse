@@ -1,75 +1,132 @@
 //import
-@import '../../../scss/principal.scss';
+@import "../../../scss/principal.scss";
 
+//variables propias
+$altocabecera: 175px;
 
-.cardproduct{
-//Valor inicial
-width: 470px;
-position: relative;
+.cardproduct {
+  //Valor inicial
+  width: 470px;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  flex-wrap: nowrap;
 
-
-.franja-negra{
+  .franja-negra {
     width: 100%;
-    height: 320px;
+    height: 50%;
     background-color: $MCnegro;
-    position: absolute; 
-    top: 285px;
-}
+    position: absolute;
+    top: $altocabecera;
+  }
 
-    .imagen-producto{
-        position: relative;
-        padding: 30px;
-        .imgen-producto-foto{
-           
-            img{
-                width: 100%;
-                height: auto;
-                
-            }
-         }
-        .bandera{
-            position: absolute;
-            margin: auto;
-            display: inline-block;
-            top:-8px;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 32px;
-            
-            img{
-                width: 100%;
-                height: auto;
-            }
-        }
-        
+  .imagen-producto {
+    position: relative;
+    padding: 30px;
+    padding-bottom: 0;
+
+    .imgen-producto-foto {
+      img {
+        width: 100%;
+        height: auto;
+      }
     }
-    .precio{
-        font-family: 'Creepster';
-        
-        .precio-actual{
-            color:$MCblanco;
-            font-size: 40px;
-        }
-        .precio-oferta{
-            color:$MCrojoO;
-            font-size: 29px;
-        }
+    .bandera {
+      position: absolute;
+      margin: auto;
+      display: inline-block;
+      top: -8px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 32px;
+
+      img {
+        width: 100%;
+        height: auto;
+      }
     }
-    .boton-voltear { 
-        width: 138px;
-    height: 40px;
-    font-size: 14px;
+  }
+  .cabecera {
+    height: 175px;
+    width: 100%;
     display: flex;
-    flex-direction: row;
-    justify-content: flex-end;
-    align-content: center;
-    text-align: right;
-    line-height: 1.2;
-        img {
-            margin-left: 10px;          
+    position: absolute;
+    top: 0;
+    justify-content: space-between;
+    align-items: flex-end;
+    padding: 15px;
+    .precio {
+      font-family: "Creepster";
+
+      .precio-actual {
+        color: $MCblanco;
+        font-size: 40px;
+      }
+      .precio-oferta {
+        color: $MCrojoO;
+        font-size: 29px;
+        position: relative;
+        display: inline-block;
+        &:after {
+          height: 2px;
+          width: calc(100% + 5px);
+          content: "";
+          background-color: #ff0000;
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          transform: translateX(-50%) rotate(345deg);
         }
+      }
     }
+    .boton-voltear {
+      width: 138px;
+      height: 40px;
+      font-size: 14px;
+      display: flex;
+      flex-direction: row;
+      justify-content: flex-end;
+      align-content: center;
+      text-align: right;
+      line-height: 1.2;
+      img {
+        margin-left: 10px;
+      }
+    }
+  }
+  .boton-blod {
+    position: relative;
+    display: inline-flex;
+    justify-content: center;
+    flex-direction: column;
+    height: 90px;
+    overflow: hidden;
 
-
+    .boton-blod-hover {
+      width: 80%;
+      position: absolute;
+      display: inline-block;
+      top: 40px;
+      left: 50%;
+      transform: translateX(-50%);
+      img {
+        width: 100%;
+        height: auto;
+      }
+    }
+    .boton-text {
+      @include Boton-a-base;
+      position: relative;
+      margin-top: 0;
+    }
+    &hover {
+      .boton-blod-hover {
+        //
+      }
+      .boton-text {
+        //
+      }
+    }
+  }
 }
-

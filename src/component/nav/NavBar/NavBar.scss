@@ -1,0 +1,36 @@
+@import "../../../scss/principal.scss";
+// modificaciones realizadas tamnbién en custom.css
+$altoMenu: 75px;
+
+.nav-sup {
+  position: relative;
+  height: $altoMenu;
+  margin-bottom: $altoMenu;
+  .navbar-collapse {
+    flex-grow: inherit;
+    //Real -> flex-grow: 1;
+  }
+  .bg-dark {
+    //bootstrap
+    background-color: $MCnegro !important;
+  }
+  .navbar-brand {
+    //bootstrap
+    height: $altoMenu;
+    img {
+      height: 100%;
+      width: auto;
+    }
+  }
+  .nav-blood {
+    position: absolute;
+    top: calc($altoMenu - 1px);
+    left: 0;
+    width: 40%;
+    z-index: -1;
+    img {
+      width: 100%;
+      height: auto;
+    }
+  }
+}

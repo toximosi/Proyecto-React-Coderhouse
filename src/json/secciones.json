@@ -1,0 +1,33 @@
+[
+  {
+    "prinicpal": [
+      {
+        "nombre": "Inicio",
+        "linkto": "",
+        "componente": ""
+      },
+      {
+        "nombre": "Tienda",
+        "linkto": "",
+        "componente": ""
+      },
+      {
+        "nombre": "Carrito",
+        "linkto": "",
+        "componente": ""
+      }
+    ],
+    "secundario": [
+      {
+        "nombre": "Uikit",
+        "linkto": "",
+        "componente": ""
+      },
+      {
+        "nombre": "Politica Cookies",
+        "linkto": "",
+        "componente": ""
+      }
+    ]
+  }
+]

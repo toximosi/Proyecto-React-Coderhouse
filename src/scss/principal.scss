@@ -1,10 +1,17 @@
 // Importaciones css.
+@import "./customBootstrap.scss";
 // Design System ---------------------------------------------
-@import './uikit/color';
-@import './uikit/text';
+@import "./uikit/color";
+@import "./uikit/text";
 // Funciones ---------------------------------------------
-@import './function/function';
-@import './function/mixin';
+@import "./function/function";
+
 // variables ---------------------------------------------
 
 // Mixin ---------------------------------------------
+@import "./function/mixin";
+
+//---- general
+.ul-no-list {
+  list-style: none;
+}

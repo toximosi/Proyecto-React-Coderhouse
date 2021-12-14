@@ -1,28 +1,28 @@
 //coolers de la app
 
 //COLORES PRINCIPALES::afterSCSS SYNTAX
-$MCrojo: #FF0000;
-$MCrojoO:#910202;
-$MCmoradogris:#745A71;
+$MCrojo: #ff0000;
+$MCrojoO: #910202;
+$MCmoradoGris: #745a71;
 //$MCGrojomorado: linear-gradient($MCrojo, $MCmoradogris);
-$MCblanco:#ffffff;
-$MCnegro:#000000;
-$MCmagenta: #FD0B98;
-$Mcrosa: #FE2E66;
-$MCnaranja:#E5B841;
-$MCamarillo:#FECA2E;
-$MCamarilloverde:#E2FF00;
-//$MCGamarilloverde: linear-gradient($MCamarillo, $MCamarilloverde);
+$MCblanco: #ffffff;
+$MCnegro: #000000;
+$MCmagenta: #fd0b98;
+$Mcrosa: #fe2e66;
+$MCnaranja: #e5b841;
+$MCamarillo: #feca2e;
+$MCamarilloVerde: #e2ff00;
+//$MCGamarilloverde: linear-gradient($MCamarillo, $MCamarilloVerde);
 //$MCGrosaamarillo: linear-gradient(90deg, $Mcrosa, $MCmagenta 25%, $MCnaranja);
-$MCazul:#0B97FD;
-$MCverde:#00FF62;
-$MCmorado: #B300F5;
+$MCazul: #0b97fd;
+$MCverde: #00ff62;
+$MCmorado: #b300f5;
 //$MCGverdemorado: linear-gradient(90deg, $MCverde, $MCazul, $MCmorado);
-$MCbg:#1D141C;
+$MCbg: #1d141c;
+$MCgrisAzul: #4e5d6f;
+$MCgris: #676767;
 //$MCGvariacion: linear-gradient(90deg, #2B2B2B, #AE0050 25%, $MCamarillo 50%, #23B734);
 
-
-
-$MCTextOscuro: #676767;
+$MCTextOscuro: $MCgris;
 //$MTextClaro:rgba(255,255,255,0.4);
-$MTextClaro:#676767;
+$MTextClaro: $MCblanco;

@@ -1,1 +1,17 @@
-
+//pruebas
+@mixin Prueba {
+  boder: 1px solid red;
+}
+//<a>
+@mixin A-format {
+  text-decoration: none;
+}
+//botones
+@mixin Boton-a-base {
+  @include A-format;
+  border-radius: 200px;
+  padding: 10px 30px;
+  color: $MCmoradoGris;
+  background-color: $MCnegro;
+  margin: auto;
+}
