@@ -26,6 +26,7 @@ import NavBar from "./component/nav/NavBar/NavBar";
 //SCSS
 import "./App.scss";
 import GetFetch from "./bd/firebase/getFetch";
+import GetFirebase from "./bd/getFirebase";
 
 //imagen prueba
 
@@ -57,6 +58,7 @@ function App() {
     <>
       <Container>
         <Prueba />
+        {/* <GetFirebase /> */}
       </Container>
 
       {/* <BrowserRouter>
