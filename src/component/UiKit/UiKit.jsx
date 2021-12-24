@@ -8,11 +8,11 @@ import React, { useState, useEffect } from "react";
 //Context
 
 //Componentes
-import itemBd from "../../bd/firebase/getFetch";
+
 //bootstrap
 import { Col, Row } from "react-bootstrap";
 //UIKIT
-import CardProducto from "../cards/CardProducto/CardProducto";
+import CardProducto from "../Cards/CardProducto/CardProducto";
 //componentes propios UiKIt
 import CardColor from "./element/CardColor/CardColor";
 //Framework Bootstrap o similar
@@ -36,7 +36,7 @@ import variables from "../../scss/uikit/color.module.scss";
 
 function UiKit() {
   const [color, setColor] = useState();
-  console.log(itemBd);
+
   //context
   //const context = useContext(contextValue);
   //variables fijas

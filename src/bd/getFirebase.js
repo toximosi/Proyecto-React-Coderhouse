@@ -23,7 +23,7 @@ const GetFirebase = () => {
   //variables fijas
   const [productDb, setProductDb] = useState([]);
   /* let productDb = [];*/
-  let loading = false;
+  /*   */
   //variables temporales
   //funciones useEffect
   useEffect(() => {
@@ -33,7 +33,7 @@ const GetFirebase = () => {
       .get()
       .then((data) => {
         if (data.size === 0) {
-          console.log("error 400: no se han cargado datos de la bd");
+          console.warn("error 400: no se han cargado datos de la bd");
           return;
         } else {
           setProductDb(
@@ -43,11 +43,10 @@ const GetFirebase = () => {
           );
         }
       })
-      .catch(console.warn("error 400: fallo de carga de bd firebase"))
-      .finally();
+      .catch(console.warn("error 400: fallo de carga de bd firebase"));
   }, []);
-  console.log(productDb);
-  return productDb;
+
+  return <h1>GetFirebase</h1>;
 };
 
 export default GetFirebase;

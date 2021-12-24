@@ -1,48 +1,27 @@
 //! icono carrito del menú
-//? Blibliografia:
-
-//importaciones --------------------------------------
 //React
-import React from "react";
+import React, { useContext, useState } from "react";
 //import { useContext, useState } from "react";
 //Context
-
-//Componentes
-
+import { AppContext } from "../../../context/AppContext";
 //Framework Bootstrap o similar
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faBabyCarriage } from "@fortawesome/free-solid-svg-icons";
 //SCSS
 import "./CartWidget.scss";
-//--------------------------------------------------
-/*--------------------------------------------------
-
- //* TODO:
-    - burbuja que marque la cantidad de productos en el carrito
-    - enlazar con la lista de compra Context --> CartContext.jsx
-    -
-
-//! IMPORTANTE:
-
-----------------------------------------------------*/
+/*----------------------------------------------------*/
 
 const CartWidget = () => {
   //context
-  //const context = useContext(contextValue);
-  //variables fijas
-  //const [state, setstate] = useState(initialState);
-  //variables temporales
-
-  //funciones internas
+  const { priceTotal, amountTotal } = useContext(AppContext);
 
   return (
     <>
-      {
-        /*<h1>CartWidget</h1>*/ <span className="cart-widget">
-          <FontAwesomeIcon icon={faBabyCarriage} />
-          <span className="cart-number">00</span>
-        </span>
-      }
+      <span className="cart-widget">
+        {priceTotal > 0 && <span className="cart-price">{priceTotal}</span>}
+        <FontAwesomeIcon icon={faBabyCarriage} />
+        {amountTotal > 0 && <span className="cart-number">{amountTotal}</span>}
+      </span>
     </>
   );
 };

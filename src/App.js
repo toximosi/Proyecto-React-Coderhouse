@@ -4,77 +4,57 @@
 //importaciones --------------------------------------
 //React
 import React from "react";
-import { Route, Routes } from "react-router";
-import { BrowserRouter } from "react-router-dom";
-//import { useContext, useState } from "react";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
 //Context
-
+import AppContextProvaider from "./context/AppContext";
+//Paginas
+import Products from "./pages/Products";
+import Inicio from "./pages/Inicio";
+import ProductDetail from "./pages/ProductDetail";
+import Cart from "./pages/Cart";
+import Order from "./pages/Order";
+import IncludeProduct from "./pages/IncludeProduct";
 //Componentes
-import ItemContainerList from "./component/items/ItemListContainer/ItemListContainer";
-import ItemDetail from "./component/items/ItemDetail/ItemDetail";
-import ItemCart from "./component/items/ItemCart/ItemCart";
-import Prueba from "./component/items/Prueba";
-//bootstrap
-import { Col, Row, Container } from "react-bootstrap";
+
 //UIKIT
 import UiKit from "./component/UiKit/UiKit";
 import Footer from "./component/nav/Footer/Footer";
 import NavBar from "./component/nav/NavBar/NavBar";
 //Framework Bootstrap o similar
-//iconos Fontawesome
-
+import { Container } from "react-bootstrap";
 //SCSS
 import "./App.scss";
-import GetFetch from "./bd/firebase/getFetch";
-import GetFirebase from "./bd/getFirebase";
-
-//imagen prueba
 
 //--------------------------------------------------
-/*--------------------------------------------------
-
- //* TODO:
-    -
-    -
-    -
-
-//! IMPORTANTE:
-
-----------------------------------------------------*/
-
-//import logo from './logo.svg';
-//Css
-
-//React
-
-//Componetes
-
-//bootstrap
-
-//----------------------------------------------------------------------------------
 
 function App() {
   return (
     <>
-      <Container>
-        <Prueba />
-        {/* <GetFirebase /> */}
-      </Container>
-
-      {/* <BrowserRouter>
-        <div className="cont">
+      <BrowserRouter>
+        <AppContextProvaider>
           <NavBar />
           <Container>
             <Routes>
-              <Route exact path="/" element={<UiKit />} />
-              <Route exact path="/productos" element={<ItemContainerList />} />
-              <Route exact path="/detalle" element={<ItemDetail />} />
-              <Route exact path="/carrito" element={<ItemCart />} />
+              <Route exact path="/" element={<Inicio />} />
+              <Route exact path="/products/" element={<Products />} />
+              <Route exact path="/products/:category" element={<Products />} />
+              <Route
+                exact
+                path="/detail/:idProducto"
+                element={<ProductDetail />}
+              />
+              <Route exact path="/cart" element={<Cart />} />
+              <Route exact path="/order" element={<Order />} />
+              <Route
+                exact
+                path="/includeproduct"
+                element={<IncludeProduct />}
+              />
             </Routes>
           </Container>
           <Footer />
-        </div>
-      </BrowserRouter> */}
+        </AppContextProvaider>
+      </BrowserRouter>
     </>
   );
 }

@@ -1,4 +1,4 @@
-//! Sección de tienda online: Muestra los card de todos los productos
+//! Explicación del uso del js
 //? Blibliografia:
 
 //importaciones --------------------------------------
@@ -25,7 +25,7 @@ import React from "react";
 
 ----------------------------------------------------*/
 
-const ItemCart = () => {
+const IncludeProductForm = () => {
   //context
   //const context = useContext(contextValue);
   //variables fijas
@@ -36,8 +36,8 @@ const ItemCart = () => {
 
   return (
     <>
-      <h1>ItemCart</h1>
+      <h1>IncludeProductForm</h1>
     </>
   );
 };
-export default ItemCart;
+export default IncludeProductForm;

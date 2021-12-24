@@ -25,7 +25,7 @@ import React from "react";
 
 ----------------------------------------------------*/
 
-const ItemListContainer = () => {
+const Inicio = () => {
   //context
   //const context = useContext(contextValue);
   //variables fijas
@@ -36,8 +36,8 @@ const ItemListContainer = () => {
 
   return (
     <>
-      <h1>ItemListContainer</h1>
+      <h1>Inicio</h1>
     </>
   );
 };
-export default ItemListContainer;
+export default Inicio;
