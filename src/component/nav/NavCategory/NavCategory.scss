@@ -1,0 +1,30 @@
+@import "../../../scss/principal.scss";
+
+.nav-category {
+  text-transform: uppercase;
+
+  h5 {
+    font-family: "Creepster", cursive;
+    font-size: 1.7rem;
+  }
+  ul {
+    list-style: none;
+    padding-left: 0;
+    border-right: 1px solid $MCgrisAzul;
+    padding-bottom: 100px;
+  }
+  a {
+    text-decoration: none;
+    color: $MCgrisAzul;
+    display: block;
+    padding: 2px;
+    margin-bottom: 5px;
+
+    font-size: 0.9rem;
+    &:hover {
+      color: $MCnegro;
+      background-color: $Mcrosa;
+      font-weight: bold;
+    }
+  }
+}

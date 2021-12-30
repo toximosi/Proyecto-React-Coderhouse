@@ -2,26 +2,21 @@
 //importaciones --------------------------------------
 //React
 import React, { useContext, useState } from "react";
+import { Button } from "react-bootstrap";
 import { Link } from "react-router-dom";
 //Context
 import { AppContext } from "../../context/AppContext";
-//Componentes
-
 //Framework Bootstrap o similar
-
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import {
+  faBabyCarriage,
+  faMinus,
+  faPlus,
+} from "@fortawesome/free-solid-svg-icons";
+import ButtonBlood from "../atom/ButtonBlood/ButtonBlood";
 //SCSS
-
+import "./ProductCounter.scss";
 //--------------------------------------------------
-/*--------------------------------------------------
-
- //* TODO:
-    - si no hay stodk anotar como agotado.
-    -
-    -
-
-//! IMPORTANTE:
-
-----------------------------------------------------*/
 
 const ProductCounter = ({ stock = 1, product }) => {
   //context
@@ -31,8 +26,6 @@ const ProductCounter = ({ stock = 1, product }) => {
   const [count, setCount] = useState(1);
   const [max, setMax] = useState(stock);
   const [inputType, setInputType] = useState("Agregar");
-  //variables temporales
-
   //funciones internas
   const add = () => count < max && setCount(count + 1);
   const subtract = () => count > 1 && setCount(count - 1);
@@ -43,31 +36,42 @@ const ProductCounter = ({ stock = 1, product }) => {
   };
 
   const AddCart = () => {
-    return <button onClick={onAdd}>Agregar al Carrito</button>;
+    return (
+      <>
+        <div>
+          <Button className="btn" onClick={onAdd}>
+            <FontAwesomeIcon icon={faBabyCarriage} />
+            <span> Agregar al Carrito</span>
+          </Button>
+        </div>
+      </>
+    );
   };
 
   const FinishBuy = () => {
     return (
       <Link to="/cart">
-        <button>Terminar compra</button>
+        <Button className="btn">Terminar compra</Button>
       </Link>
     );
   };
 
   return (
     <>
-      <h1>ProductCounter</h1>
-      <div>
-        <button onClick={add}>+</button>
-        {count}
-        <button onClick={subtract}>-</button>
+      <div className="product-counter">
+        <Button className="btn btn-circle" onClick={add}>
+          <FontAwesomeIcon icon={faPlus} />
+        </Button>
+        <input className="counter-number" value={count} />
+        <Button className="btn btn-circle" onClick={subtract}>
+          <FontAwesomeIcon icon={faMinus} />
+        </Button>
         <div>
-          {" "}
           {inputType === "Agregar" ? (
             <AddCart />
           ) : (
             <>
-              <AddCart /> <FinishBuy />
+              <FinishBuy />
             </>
           )}
         </div>

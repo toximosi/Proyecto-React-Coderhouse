@@ -1,7 +1,7 @@
 //! icono carrito del menú
 //React
-import React, { useContext, useState } from "react";
-//import { useContext, useState } from "react";
+import React, { useContext } from "react";
+import { Link } from "react-router-dom";
 //Context
 import { AppContext } from "../../../context/AppContext";
 //Framework Bootstrap o similar
@@ -18,8 +18,15 @@ const CartWidget = () => {
   return (
     <>
       <span className="cart-widget">
-        {priceTotal > 0 && <span className="cart-price">{priceTotal}</span>}
-        <FontAwesomeIcon icon={faBabyCarriage} />
+        {priceTotal > 0 && (
+          <span className="cart-price">
+            {priceTotal}
+            <sup>€</sup>{" "}
+          </span>
+        )}
+        <Link to="/cart">
+          <FontAwesomeIcon icon={faBabyCarriage} />
+        </Link>
         {amountTotal > 0 && <span className="cart-number">{amountTotal}</span>}
       </span>
     </>

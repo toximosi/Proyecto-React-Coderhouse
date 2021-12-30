@@ -1,16 +1,27 @@
 @import "../../../scss/principal.scss";
 
 .cart-widget {
+  font-family: "Creepster", cursive;
   font-size: 25px;
   display: inline-block;
   position: relative;
+  transition: 0.2s;
+  a {
+    color: $MCgrisAzul;
+    transform: scale(1);
+  }
+  .cart-price {
+    font-size: 18px;
+    color: $MCrojo;
+    opacity: 0.5;
+  }
   .cart-number {
     position: absolute;
     display: flex;
     justify-content: center;
     align-items: center;
     top: 0;
-    font-size: 10px;
+    font-size: 12px;
     font-weight: bold;
     color: $MCblanco;
     border-radius: 100px;
@@ -22,7 +33,14 @@
     right: -$d/2;
   }
   &:hover {
+    transition: 0.2s;
     transform: scale(1.2);
+    .cart-price {
+      opacity: 1;
+    }
+    a {
+      color: $MCblanco;
+    }
     .cart-number {
       opacity: 1;
     }

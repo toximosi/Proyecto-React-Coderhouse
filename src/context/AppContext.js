@@ -1,25 +1,10 @@
 //! manejamos todos la lógica común para todas las secciones con realción a la lista de los productos,
-//? Blibliografia:
-
 //importaciones --------------------------------------
 //React
 import React from "react";
 import { createContext, useState, useEffect } from "react";
-//Componentes
-/* import firebase from "../bd/firebase/firebase";
-import "firebase/firestore"; */
-import Loading from "../component/helpers/Loading/loading";
+
 //--------------------------------------------------
-/*--------------------------------------------------
-
- //* TODO:
-    -
-    -
-    -
-
-//! IMPORTANTE:
-
-----------------------------------------------------*/
 
 export const AppContext = createContext([]);
 
@@ -28,6 +13,7 @@ function AppContextProvaider({ children }) {
   const [cartList, setCartList] = useState([]);
   const [amountTotal, setAmountTotal] = useState(0);
   const [priceTotal, setPriceTotal] = useState(0);
+  const [idPedido, setIdPedido] = useState(0);
 
   //variables temporales
   //funciones internas

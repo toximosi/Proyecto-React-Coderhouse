@@ -1,0 +1,65 @@
+@import "../../scss/principal.scss";
+
+.order-form {
+  .pedido-form,
+  .pedido-order {
+    border-radius: 10px;
+    margin: $SpaceSmall 0px;
+
+    background-color: $MCnegro;
+  }
+  .pedido-form {
+    padding: $SpaceMedium;
+  }
+  .pedido-order {
+    padding: $SpaceMedium/2;
+    font-size: 1rem;
+    table {
+      width: 100%;
+      border: none;
+      margin-bottom: 20px;
+      text-align: center;
+    }
+    .pedido-producto {
+      width: 100%;
+
+      .producto-img {
+        width: 50px;
+        height: auto;
+        img {
+          width: 100%;
+          height: auto;
+        }
+      }
+      .producto-precio {
+        font-style: italic;
+      }
+      .producto-total {
+        font-weight: bold;
+        color: $MCmagenta;
+        text-align: right;
+      }
+    }
+    .pedido-total {
+      color: $MCmagenta;
+      font-weight: bold;
+      font-size: 1.2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-top: 1px solid $MCmoradoGris;
+      padding-top: 10px;
+    }
+  }
+  div {
+    margin-bottom: $SpaceSmall;
+  }
+  label {
+    margin-bottom: $SpaceSmall/2;
+  }
+  Button {
+    margin-top: $SpaceMedium/2;
+    background-color: $MCmoradoGris;
+    color: $MCnegro;
+  }
+}

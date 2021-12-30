@@ -1,39 +1,22 @@
-//! Explicación del uso del js
-//? Blibliografia:
-
+//! Lógica para la muestra del detalle del producto
 //importaciones --------------------------------------
 //React
 import React, { useState, useEffect } from "react";
-//import { useContext, useState } from "react";
-//Context
-
+import { Link } from "react-router-dom";
 //Componentes
 import getFirestore from "../../bd/firebase/firebase";
 import ProductCounter from "../ProductCounter/ProductCounter";
+import ProductList from "../ProductList/ProductList";
 //Framework Bootstrap o similar
-
+import { Col, Row } from "react-bootstrap";
 //SCSS
-
+import "./ProductDetailItem.scss";
 //--------------------------------------------------
-/*--------------------------------------------------
-
- //* TODO:
-    -
-    -
-    -
-
-//! IMPORTANTE:
-
-----------------------------------------------------*/
 
 const ProductDetailItem = ({ id = "" }) => {
-  //context
-  //const context = useContext(contextValue);
   //variables fijas
   const [product, setProduct] = useState({}); //listado de productos
   const [loading, setLoading] = useState(true);
-  //variables temporales
-
   //funciones internas
   useEffect(() => {
     const db = getFirestore();
@@ -48,33 +31,68 @@ const ProductDetailItem = ({ id = "" }) => {
 
   return (
     <>
-      <h1>ProductDetailItem</h1>
       <div>
         {loading ? (
           <h1>loading</h1>
         ) : (
-          <div key={product.idf}>
-            <ul>
-              <li>id: {product.idf}</li>
-              <li>
-                <img
-                  style={{ width: "50px", height: "auto" }}
-                  src={product.imagen}
-                />
-              </li>
-              <li>Referencia: {product.ref}</li>
-              <li>nombre: {product.nombre}</li>
-              <li>estado: {product.estado}</li>
-              <li>caracteristica: {product.caracteristica}</li>
-              <li>descripcion: {product.descripcion}</li>
-              <li>precio oferta: {product.precioçOferta} + €</li>
-              <li>precio: {product.precio} + €</li>
-              <li>stock: {product.stock}</li>
-              <li>categoria: {product.categoria}</li>
-              <ProductCounter stock={product.stock} product={product} />
-            </ul>
-            <hr />
-          </div>
+          <>
+            <div className="product-detail-item">
+              <Row key={product.idf}>
+                <Col xs={12} md={6}>
+                  <div className="carrusel">
+                    <img
+                      alt={product.nombre}
+                      src={`/asset/img/productos/${product.thumb}`}
+                    />
+                  </div>
+                </Col>
+                <Col xs={12} md={6}>
+                  <h1>{product.nombre}</h1>
+
+                  <div className="precio">
+                    {product.precioOferta > 0 ? (
+                      <diV>
+                        <span className="precio-actual">
+                          {product.precioOferta}
+                          <sup>€</sup>
+                        </span>
+                        <span className="precio-oferta">
+                          {product.precio}
+                          <sup>€</sup>
+                        </span>
+                      </diV>
+                    ) : (
+                      <span className="precio-actual">
+                        {product.precio}
+                        <sup>€</sup>
+                      </span>
+                    )}
+                  </div>
+                  <div className="referencia">Ref: {product.ref}</div>
+                  <div className="caracteristica">{product.descripcion}</div>
+                  <div>
+                    <p>
+                      <br />
+                      categoria: &#160;
+                      <Link to={`/products/${product.categoria}`}>
+                        {product.categoria}
+                      </Link>
+                    </p>
+                  </div>
+                  <div>Solo quedan: {product.stock} unidades.</div>
+                  <div className="contador">
+                    <ProductCounter stock={product.stock} product={product} />
+                  </div>
+                </Col>
+              </Row>
+            </div>
+            <div className="otros-productos">
+              <h2>Otros productos que te pueden interesar</h2>
+              <Row>
+                <ProductList category={product.category} />
+              </Row>
+            </div>
+          </>
         )}
       </div>
     </>

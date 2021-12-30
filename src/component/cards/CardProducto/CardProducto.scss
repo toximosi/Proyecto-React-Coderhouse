@@ -3,6 +3,24 @@
 
 //variables propias
 $altocabecera: 175px;
+//mixin
+$timeAnimation: 0.4s;
+@mixin estadoInicialFoto {
+  transition-duration: $timeAnimation;
+  transition-delay: 0.1s;
+  transform-style: preserve-3d;
+  opacity: 1;
+  filter: blur(0px) saturate(100%);
+  transform: rotateY(0deg) scale(1);
+}
+@mixin estadoFinalFoto {
+  transition-duration: $timeAnimation;
+  transition-delay: 0.1s;
+  transform-style: preserve-3d;
+  filter: blur(30px) saturate(180%);
+  opacity: 0;
+  transform: rotateY(90deg) scale(1.1);
+}
 
 .cardproduct {
   //Valor inicial
@@ -22,14 +40,72 @@ $altocabecera: 175px;
   }
 
   .imagen-producto {
-    position: relative;
     padding: 30px;
     padding-bottom: 0;
 
     .imgen-producto-foto {
+      position: relative;
       img {
         width: 100%;
         height: auto;
+      }
+      .base {
+        transition-duration: $timeAnimation;
+        position: absolute;
+        top: 0;
+        left: 0;
+        filter: blur(0px);
+        z-index: -1;
+      }
+      .foto-anim-simple {
+        transition-duration: $timeAnimation;
+        transform: scale(1);
+        /*         background-repeat: no-repeat;
+        background-size: 100% auto;
+        background-position: top left; */
+        img {
+          transition-duration: $timeAnimation;
+          transform: scale(1);
+        }
+        &:hover {
+          transition-duration: $timeAnimation;
+          transform: scale(1.1);
+          .base {
+            transition-duration: $timeAnimation;
+            filter: blur(2px);
+          }
+          img {
+            /*             transition-duration: $timeAnimation;
+            transform: scale(1.05); */
+          }
+        }
+      }
+      .foto-anim-compuesta {
+        position: relative;
+        .foto-front {
+          @include estadoInicialFoto();
+          background-repeat: no-repeat;
+          background-size: 100% auto;
+          background-position: top left;
+        }
+        .foto-back {
+          position: absolute;
+          top: 0;
+          left: 0;
+          @include estadoFinalFoto();
+          background-repeat: no-repeat;
+          background-size: 100% auto;
+          background-position: top left;
+        }
+        &:hover {
+          .foto-front {
+            @include estadoFinalFoto();
+          }
+          .foto-back {
+            @include estadoInicialFoto();
+            transform: scale(1.1);
+          }
+        }
       }
     }
     .bandera {
@@ -38,12 +114,20 @@ $altocabecera: 175px;
       display: inline-block;
       top: -8px;
       left: 50%;
-      transform: translateX(-50%);
+      transform: translate(-50%, 0);
       width: 32px;
+      z-index: 10;
+      transition-duration: $timeAnimation;
 
       img {
         width: 100%;
         height: auto;
+      }
+    }
+    &:hover {
+      .bandera {
+        transition-duration: $timeAnimation;
+        transform: translate(-50%, -20px);
       }
     }
   }
@@ -92,40 +176,6 @@ $altocabecera: 175px;
       line-height: 1.2;
       img {
         margin-left: 10px;
-      }
-    }
-  }
-  .boton-blod {
-    position: relative;
-    display: inline-flex;
-    justify-content: center;
-    flex-direction: column;
-    height: 90px;
-    overflow: hidden;
-
-    .boton-blod-hover {
-      width: 80%;
-      position: absolute;
-      display: inline-block;
-      top: 40px;
-      left: 50%;
-      transform: translateX(-50%);
-      img {
-        width: 100%;
-        height: auto;
-      }
-    }
-    .boton-text {
-      @include Boton-a-base;
-      position: relative;
-      margin-top: 0;
-    }
-    &hover {
-      .boton-blod-hover {
-        //
-      }
-      .boton-text {
-        //
       }
     }
   }

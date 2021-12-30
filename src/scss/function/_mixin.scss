@@ -1,3 +1,9 @@
+@import "../uikit/color";
+//Variables ----------------
+//Espacios
+$SpaceSmall: 15px;
+$SpaceMedium: 60px;
+$SpaceBig: 150px;
 //pruebas
 @mixin Prueba {
   boder: 1px solid red;
@@ -14,4 +20,9 @@
   color: $MCmoradoGris;
   background-color: $MCnegro;
   margin: auto;
+}
+
+//animacion
+@mixin animation {
+  transition: 0.2s;
 }

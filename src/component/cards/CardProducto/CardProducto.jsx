@@ -1,74 +1,107 @@
-//! Explicación del uso del js
-//? Blibliografia:
+//! Card para mostrar los productos de la tienda
 //importaciones --------------------------------------
 //React
 import React from "react";
-//import { useContext, useState } from "react";
-//Context
-
+import { Link } from "react-router-dom";
 //Componentes
-import { BadgeProducto } from "../../atom/BadgeProducto";
-//Framework Bootstrap o similar
-//iconos Fontawesome
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faBabyCarriage } from "@fortawesome/free-solid-svg-icons";
+import ButtonBlood from "../../atom/ButtonBlood/ButtonBlood";
 //SCSS
 import "./CardProducto.scss";
-//imagen prueba
-
 //--------------------------------------------------
-/*--------------------------------------------------
-
- //* TODO:
-    -
-    -
-    -
-
-//! IMPORTANTE:
-
-----------------------------------------------------*/
-
-const CardProducto = () => {
-  //context
-  //const context = useContext(contextValue);
-  //variables fijas
-  //const [state, setstate] = useState(initialState);
-  //variables temporales
-
+const CardProducto = ({
+  idf,
+  nombre,
+  precio,
+  precioOferta = 0,
+  imagen,
+  imagenBack = "",
+  estado = "",
+}) => {
+  precio = parseInt(precio);
+  precioOferta = parseInt(precioOferta);
   //funciones internas
-
+  function showPrecioOferta(o, p) {
+    return o > 0 ? (
+      <div>
+        <div className="precio-oferta"> {p} €</div>
+        <div className="precio-actual">{o}€</div>
+      </div>
+    ) : (
+      <div className="precio-actual">{p}€</div>
+    );
+  }
+  function ShowBadgeProduct(
+    n = nombre,
+    p = precio,
+    pO = precioOferta,
+    e = estado
+  ) {
+    let badge = "";
+    switch (e) {
+      case "normal":
+        return;
+        break;
+      case "new":
+        badge = "/asset/svg/bandera-nuevo.svg";
+        break;
+      case "offer":
+        badge = "/asset/svg/bandera-oferta.svg";
+        break;
+    }
+    return <img alt={n} src={badge} />;
+  }
   return (
     <>
-      <h1>CardProducto</h1>
       <div className="cardproduct">
         <div className="cabecera">
-          <div className="precio">
-            <div className="precio-oferta">00,00€</div>
-            <div className="precio-actual">00,00€</div>
-          </div>
-          <div className="boton-voltear">
-            Ver diseño trasero
-            <img src="/asset/svg/btn-voltear.svg" />
-          </div>
+          <div className="precio">{showPrecioOferta(precioOferta, precio)}</div>
+          {imagenBack !== "" && (
+            <div className="boton-voltear">
+              Ver diseño trasero
+              <img src="/asset/svg/btn-voltear.svg" />
+            </div>
+          )}
         </div>
         <div className="franja-negra"></div>
         <div className="imagen-producto">
           <div className="bandera">
-            {/*<BadgeProducto />*/}
-            <img src="/asset/svg/bandera-oferta.svg" />
+            {ShowBadgeProduct(nombre, precio, precioOferta, estado)}
           </div>
           <div className="imgen-producto-foto">
-            <img src="/asset/img/plantilla/producto-front.png" />
+            <Link to={`/detail/${idf}`}>
+              {imagenBack !== "" ? (
+                <div className="foto-anim-compuesta">
+                  <div className="foto-front">
+                    <img
+                      className="base"
+                      src="/asset/img/plantilla/producto-front.png"
+                    />
+                    <img alt={nombre} src={`/asset/img/productos/${imagen}`} />
+                  </div>
+                  <div className="foto-back">
+                    <img
+                      className="base"
+                      src="/asset/img/plantilla/producto-back.png"
+                    />
+                    <img
+                      alt={nombre}
+                      src={`/asset/img/productos/${imagenBack}`}
+                    />
+                  </div>
+                </div>
+              ) : (
+                <div className="foto-anim-simple foto-front">
+                  <img
+                    className="base"
+                    src="/asset/img/plantilla/producto-front.png"
+                  />
+                  <img alt={nombre} src={`/asset/img/productos/${imagen}`} />
+                </div>
+              )}
+            </Link>
           </div>
         </div>
-        <div className="boton-blod">
-          <div className="boton-blod-hover">
-            <img src="/asset/svg/boton-blood.svg" />
-          </div>
-          <a className="boton-text">
-            <FontAwesomeIcon icon="faBabyCarriage" /> Añadir al acarrito
-          </a>
-        </div>
+        <ButtonBlood link={`/detail/${idf}`} text={"Ver Producto"} />
       </div>
     </>
   );

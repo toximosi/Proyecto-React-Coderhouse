@@ -12,6 +12,54 @@
 @import "./function/mixin";
 
 //---- general
+
 .ul-no-list {
   list-style: none;
+}
+// Text------------------------------------------------
+h1,
+h2 {
+  font-family: "Creepster", cursive;
+}
+h1 {
+  font-size: 4rem;
+}
+h2 {
+  font-size: 3.2rem;
+}
+// links
+
+a {
+  color: $MCmoradoGris;
+  text-decoration: underline;
+}
+//---------- BOTONES
+.btn {
+  border: 0px;
+  border-radius: 200px;
+  padding: 10px 30px;
+  color: #745a71;
+
+  &:hover {
+    border: 0px;
+    background-color: #ff0000;
+    //background: linear-gradient($MCrojo, $MCmoradoGris);
+    color: #000000;
+  }
+  &:focus {
+    background-color: #ff0000;
+    border-color: #ff0000;
+  }
+}
+.btn-primary {
+  background-color: #000000;
+  border-color: #000000;
+}
+.btn-circle {
+  padding: 16px;
+  margin: 10px;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 200px;
 }

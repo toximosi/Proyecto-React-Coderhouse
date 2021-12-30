@@ -24,41 +24,27 @@ const NavBar = () => {
             <Container>
               <Navbar.Brand>
                 <Nav.Link href="/">
-                  <img src="/Asset/svg/logo-morror.svg" />
+                  <img src="/asset/svg/logo-morror.svg" />
                 </Nav.Link>
               </Navbar.Brand>
               <Navbar.Toggle aria-controls="responsive-navbar-nav" />
               <Navbar.Collapse id="responsive-navbar-nav">
                 <Nav className="me-auto">
                   <Nav.Link as={Link} to="/">
-                    Inicio
-                  </Nav.Link>
-                  <Nav.Link as={Link} to="/products/all">
                     Shop
                   </Nav.Link>
-                  <NavDropdown title="Varios" id="collasible-nav-dropdown">
-                    <NavDropdown.Item as={Link} to="/includeproduct">
-                      Incluir productos
-                    </NavDropdown.Item>
-                    <NavDropdown.Item as={Link} to="/order">
-                      Orden
-                    </NavDropdown.Item>
-                  </NavDropdown>
-
                   <Nav.Link as={Link} to="/cart">
                     Carrito
                   </Nav.Link>
                 </Nav>
               </Navbar.Collapse>
               <Nav>
-                <Link to="/cart">
-                  <CartWidget />
-                </Link>
+                <CartWidget />
               </Nav>
             </Container>
           </Navbar>
           <div className="nav-blood">
-            <img src="/Asset/svg/menu-blood.svg" />
+            <img src="/asset/svg/menu-blood.svg" />
           </div>
         </div>
       }

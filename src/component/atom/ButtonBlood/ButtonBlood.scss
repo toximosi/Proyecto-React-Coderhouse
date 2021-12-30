@@ -1,0 +1,42 @@
+//import
+@import "../../../scss/principal.scss";
+
+//variables propias
+$altocabecera: 175px;
+//mixin
+$timeAnimation: 0.4s;
+
+.button-blood {
+  position: relative;
+  display: inline-flex;
+  justify-content: center;
+  flex-direction: column;
+  height: 90px;
+  overflow: hidden;
+
+  .button-blood-hover {
+    width: 80%;
+    position: absolute;
+    display: inline-block;
+    top: 40px;
+    left: 50%;
+    transform: translateX(-50%);
+    img {
+      width: 100%;
+      height: auto;
+    }
+  }
+  .button-text {
+    @include Boton-a-base;
+    position: relative;
+    margin-top: 0;
+  }
+  &:hover {
+    .button-blod-hover {
+      //
+    }
+    .button-text {
+      //
+    }
+  }
+}

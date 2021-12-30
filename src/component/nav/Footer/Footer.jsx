@@ -1,15 +1,8 @@
 //! "Menú inferior" - común en todas las páginas. Se coloca al final de todas las
-//? Blibliografia:
-
 //importaciones --------------------------------------
 //React
 import React from "react";
-
-//import { useContext, useState } from "react";
-//Context
-
-//Componentes
-
+import { Link } from "react-router-dom";
 //Framework Bootstrap o similar
 import { Container, Row, Col } from "react-bootstrap";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -22,32 +15,10 @@ import {
 //SCSS
 import "animate.css";
 import "./Footer.scss";
-
 //--------------------------------------------------
-/*--------------------------------------------------
-
- //* TODO:
-    -
-    -
-    -
-
-//! IMPORTANTE:
-
-----------------------------------------------------*/
-
 const Footer = () => {
-  //context
-  //const context = useContext(contextValue);
-  //variables fijas
-  //const [state, setstate] = useState(initialState);
-  //variables temporales
-
-  //funciones internas
-
   return (
     <>
-      {/* <h1>Footer</h1> */}
-
       <div className="footer">
         <div className="footer-sup">
           <div className="footer-logo">
@@ -82,12 +53,14 @@ const Footer = () => {
                 </div>
                 <div className="footer-menu">
                   <ul className="ul-no-list">
-                    <li>Seccion</li>
-                    <li>Seccion</li>
-                    <li>Seccion</li>
-                    <li>Seccion</li>
+                    <li>
+                      <Link to={"/"}>Shop</Link>
+                    </li>
+                    <li>
+                      <Link to={"/cart/"}>Carrito</Link>
+                    </li>
                   </ul>
-                  <p>--</p>
+
                   <ul className="ul-no-list">
                     <li>Política de cookies</li>
                     <li>Política de privacidad </li>
@@ -97,7 +70,7 @@ const Footer = () => {
               </Col>
             </Row>
             <div className="Copyright">
-              Copyright “the cult of morror”. 1021
+              Copyright “the cult of morror”. 2021
             </div>
           </Container>
         </div>

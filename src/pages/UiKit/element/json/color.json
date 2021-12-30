@@ -1,0 +1,48 @@
+[
+  { "type": "normal", "nombre": "$MCrojo", "hex": "#ff0000" },
+  { "type": "normal", "nombre": "$MCrojoO", "hex": "#910202" },
+  {
+    "type": "gradient",
+    "nombre": "$MCGrojomorado",
+    "hex": "#ff0000, #745a71",
+    "gradient": "linear-gradient(#ff0000, #745a71)"
+  },
+  { "type": "normal", "nombre": "$MCmoradoGris", "hex": "#745a71" },
+  { "type": "normal", "nombre": "$MCblanco", "hex": "#ffffff" },
+  { "type": "normal", "nombre": "$MCnegro", "hex": "#000000" },
+  { "type": "normal", "nombre": "$MCmagenta", "hex": "#fd0b98" },
+  { "type": "normal", "nombre": "$Mcrosa", "hex": "#fe2e66" },
+  { "type": "normal", "nombre": "$MCnaranja", "hex": "#e5b841" },
+  { "type": "normal", "nombre": "$MCamarillo", "hex": "#feca2e" },
+  { "type": "normal", "nombre": "$MCamarilloVerde", "hex": "#e2ff00" },
+  {
+    "type": "gradient",
+    "nombre": "$MCGamarilloverde",
+    "hex": "#feca2e, #e2ff00",
+    "gradient": "linear-gradient(#feca2e, #e2ff00)"
+  },
+  {
+    "type": "gradient",
+    "nombre": "$MCGrosaamarillo",
+    "hex": "#fe2e66, #fd0b98, #e5b841",
+    "gradient": "linear-gradient(90deg, #fe2e66, #fd0b98 25%, #e5b841)"
+  },
+  { "type": "normal", "nombre": "$MCazul", "hex": "#0b97fd" },
+  { "type": "normal", "nombre": "$MCverde", "hex": "#00ff62" },
+  { "type": "normal", "nombre": "$MCmorado", "hex": "#b300f5" },
+  {
+    "type": "gradient",
+    "nombre": "$MCGverdemorado",
+    "hex": "#00ff62, #0b97fd, #b300f5",
+    "gradient": "linear-gradient(90deg, #00ff62, #0b97fd, #b300f5)"
+  },
+  { "type": "normal", "nombre": "$MCbg", "hex": "#1d141c" },
+  { "type": "normal", "nombre": "$MCgrisAzul", "hex": "#4e5d6f" },
+  { "type": "normal", "nombre": "$MCgris", "hex": "#676767" },
+  {
+    "type": "gradient",
+    "nombre": "$MCGvariacion",
+    "hex": "#2B2B2B, #AE0050, #feca2e, #23B734",
+    "gradient": "linear-gradient(90deg, #2B2B2B, #AE0050 25%, #feca2e 50%, #23B734)"
+  }
+]

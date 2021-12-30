@@ -1,5 +1,4 @@
-//! Explicación del uso del js
-//? Blibliografia:
+//! Página inicial -- en porceso
 
 //importaciones --------------------------------------
 //React

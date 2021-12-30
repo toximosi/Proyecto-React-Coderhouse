@@ -1,17 +1,11 @@
 [
   {
-    "name": "camisetas"
+    "name": "simple"
   },
   {
-    "name": "pantalones"
+    "name": "good"
   },
   {
-    "name": "gorras"
-  },
-  {
-    "name": "sudaderas"
-  },
-  {
-    "name": "zapatillas"
+    "name": "normal"
   }
 ]

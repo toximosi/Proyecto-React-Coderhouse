@@ -15,15 +15,15 @@ import Cart from "./pages/Cart";
 import Order from "./pages/Order";
 import IncludeProduct from "./pages/IncludeProduct";
 //Componentes
-
-//UIKIT
-import UiKit from "./component/UiKit/UiKit";
 import Footer from "./component/nav/Footer/Footer";
 import NavBar from "./component/nav/NavBar/NavBar";
+//UIKIT
+import UiKit from "./pages/UiKit/UiKit";
 //Framework Bootstrap o similar
 import { Container } from "react-bootstrap";
 //SCSS
 import "./App.scss";
+import OrderFinish from "./pages/OrderFinish";
 
 //--------------------------------------------------
 
@@ -35,8 +35,7 @@ function App() {
           <NavBar />
           <Container>
             <Routes>
-              <Route exact path="/" element={<Inicio />} />
-              <Route exact path="/products/" element={<Products />} />
+              <Route exact path="/" element={<Products />} />
               <Route exact path="/products/:category" element={<Products />} />
               <Route
                 exact
@@ -45,11 +44,13 @@ function App() {
               />
               <Route exact path="/cart" element={<Cart />} />
               <Route exact path="/order" element={<Order />} />
+              <Route exact path="/order/:id" element={<OrderFinish />} />
               <Route
                 exact
                 path="/includeproduct"
                 element={<IncludeProduct />}
               />
+              <Route exact path="/uikit" element={<UiKit />} />
             </Routes>
           </Container>
           <Footer />

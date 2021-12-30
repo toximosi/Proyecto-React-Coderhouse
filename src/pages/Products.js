@@ -22,9 +22,7 @@ const Products = () => {
   return (
     <>
       <Row>
-        <Col xs={3}>
-          <NavCategory />
-        </Col>
+        <NavCategory />
         <Col>
           {category && <h1>{category}</h1>}
           <ProductList category={category} />
