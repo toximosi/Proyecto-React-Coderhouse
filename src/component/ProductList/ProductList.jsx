@@ -17,28 +17,30 @@ const ProductList = ({ category = "all", column = 2 }) => {
   const [loading, setLoading] = useState(true);
   //funciones internas
   useEffect(() => {
-    let tempProduct = [];
-    const db = getFirestore();
-    const dbQuery = db.collection("productos").get();
-    dbQuery
-      .then((d) => {
-        d.size === 0 //revisamos si devuelve datos
-          ? console.warn("⚠️ no hay datos")
-          : (tempProduct = d.docs.map((item) => ({
-              idf: item.id,
-              ...item.data(),
-            })));
-      })
-      .then((res) => {
-        //dependiendo si se ha seleccionado todos los elementos o solo una categoria
-        if (category === "all") {
-          setProducstBd(tempProduct);
-        } else {
-          setProducstBd(tempProduct.filter((i) => i.categoria === category));
-        }
-      })
-      .catch(console.warn("⚠️ error carga bd de productos"))
-      .finally(setLoading(false));
+    setTimeout(() => {
+      let tempProduct = [];
+      const db = getFirestore();
+      const dbQuery = db.collection("productos").get();
+      dbQuery
+        .then((d) => {
+          d.size === 0 //revisamos si devuelve datos
+            ? console.warn("⚠️ no hay datos")
+            : (tempProduct = d.docs.map((item) => ({
+                idf: item.id,
+                ...item.data(),
+              })));
+        })
+        .then((res) => {
+          //dependiendo si se ha seleccionado todos los elementos o solo una categoria
+          if (category === "all") {
+            setProducstBd(tempProduct);
+          } else {
+            setProducstBd(tempProduct.filter((i) => i.categoria === category));
+          }
+        })
+        .catch(console.warn("⚠️ error carga bd de productos"))
+        .finally(setLoading(false));
+    }, 3000);
   }, [category]);
 
   return (
