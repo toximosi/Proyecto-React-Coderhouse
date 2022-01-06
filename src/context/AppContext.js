@@ -21,15 +21,25 @@ function AppContextProvaider({ children }) {
   const addProduct = (i, c) => {
     c = parseInt(c);
     //Crear la propiedad cantidad si no existe, en el objeto item.
-    !i.cantidadCart
+    /* !i.cantidadCart
       ? (i.cantidadCart = c)
       : (i.cantidadCart = i.cantidadCart + c);
     let found = cartList.find((p) => p.idf === i.idf);
-    !found && setCartList([...cartList, i]);
+    !found && setCartList([...cartList, i]); */
+    let found = cartList.find((p) => p.idf === i.idf);
+    if (!found) {
+      i.cantidadCart = c;
+      setCartList([...cartList, i]);
+    } else {
+      i.cantidadCart = i.cantidadCart + c;
+      setCartList([...cartList]);
+    }
   };
   const emptyCart = () => setCartList([]);
   const deleteProduct = (i) => setCartList(cartList.filter((p) => p.idf !== i));
+
   useEffect(() => {
+    console.log("cartList", cartList);
     let c = 0; //Cantidad
     let p = 0; //precio
     cartList.forEach((e) => {

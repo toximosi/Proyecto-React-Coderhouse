@@ -45,7 +45,7 @@ const ProductList = ({ category = "all", column = 2 }) => {
     <>
       <div>
         {loading ? (
-          <h1>loading</h1>
+          <h1>Cargando ...</h1>
         ) : (
           <Row>
             {producstBd.map((p) => (

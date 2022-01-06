@@ -33,7 +33,7 @@ const ProductDetailItem = ({ id = "" }) => {
     <>
       <div>
         {loading ? (
-          <h1>loading</h1>
+          <h1>Cargando ...</h1>
         ) : (
           <>
             <div className="product-detail-item">
@@ -51,7 +51,7 @@ const ProductDetailItem = ({ id = "" }) => {
 
                   <div className="precio">
                     {product.precioOferta > 0 ? (
-                      <diV>
+                      <div>
                         <span className="precio-actual">
                           {product.precioOferta}
                           <sup>€</sup>
@@ -60,7 +60,7 @@ const ProductDetailItem = ({ id = "" }) => {
                           {product.precio}
                           <sup>€</sup>
                         </span>
-                      </diV>
+                      </div>
                     ) : (
                       <span className="precio-actual">
                         {product.precio}

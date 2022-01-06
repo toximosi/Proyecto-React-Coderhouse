@@ -214,7 +214,7 @@ const OrderForm = () => {
                 {finish === "false" ? (
                   <Button onClick={handleSubmit}>Finalizar pedido</Button>
                 ) : (
-                  <Link to={`/oreder/${idPedido}`}>
+                  <Link to={`/order/${idPedido}`}>
                     <Button>Ver pedido</Button>
                   </Link>
                 )}

@@ -32,7 +32,7 @@ const OrderFact = ({ idfact = "NNOW1yLlr8kGnBeciX7Y" }) => {
   return (
     <>
       {loading ? (
-        <h1>loading</h1>
+        <h1>Cargando ...</h1>
       ) : (
         <div className="order-fact">
           <Row key={fact.idf}>

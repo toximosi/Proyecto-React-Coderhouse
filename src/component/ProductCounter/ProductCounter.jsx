@@ -62,7 +62,7 @@ const ProductCounter = ({ stock = 1, product }) => {
         <Button className="btn btn-circle" onClick={add}>
           <FontAwesomeIcon icon={faPlus} />
         </Button>
-        <input className="counter-number" value={count} />
+        <input className="counter-number" value={count} onChange={setCount} />
         <Button className="btn btn-circle" onClick={subtract}>
           <FontAwesomeIcon icon={faMinus} />
         </Button>
@@ -71,6 +71,8 @@ const ProductCounter = ({ stock = 1, product }) => {
             <AddCart />
           ) : (
             <>
+              <AddCart />
+              <br />
               <FinishBuy />
             </>
           )}

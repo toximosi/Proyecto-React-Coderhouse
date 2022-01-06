@@ -28,7 +28,7 @@ El mapa de navegación de la web es:
 - scss/css
 
 ### Librerias externas a create-react-app:
-    - [firebase]: importante: la versión es 8.9.1.
-    - [boostrap]
-    - [react-router]
-    - [FontAwesome]
+    - [firebase]: importante: la versión es 8.9.1.: usado para la conexión de la base de datos con Firebase.
+    - [boostrap]: framework de maquetación, para su uso visual (html/Scss)
+    - [react-router]: libería para gestionar rutas en aplicaciones que utilicen ReactJS.
+    - [FontAwesome]: fonts icons para el aspecto visual de la app.
